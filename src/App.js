@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Lotto from './Lotto'
 import styled from 'styled-components'
 
@@ -23,11 +23,20 @@ const Title = styled.h2`
 `
 
 function App() {
+  const [generate, setGenerate] = useState(false)
+  const refreshApp = () => {
+    setGenerate(!generate)
+  }
   return (
     <Container>
       <AppHeader>
         <Title>Lotto Generator Component</Title>
-        <Lotto title="Mini Daily" numBalls={7} maxNum={99} />
+        <Lotto
+          title="Mini Daily"
+          numBalls={7}
+          maxNum={99}
+          generate={refreshApp}
+        />
       </AppHeader>
     </Container>
   )

@@ -22,13 +22,7 @@ const GenerateButton = styled.button`
   color: white;
 `
 
-// 1) Get Number of Balls
-// 2) Get Range# of Balls
-// 3) Generate Balls ==>
-// 3a)
-
 function getRandomNumber(max) {
-  console.log(max)
   return Math.floor(Math.random() * max + 1)
 }
 
@@ -40,12 +34,12 @@ function generateBalls(maxBalls, maxNum) {
   return ballsArray
 }
 
-function index({ title, numBalls, maxNum }) {
+function index({ title, numBalls, maxNum, generate }) {
   return (
     <Container>
       <Title>{title}</Title>
       <BallContainer>{generateBalls(numBalls, maxNum)}</BallContainer>
-      <GenerateButton>Generate</GenerateButton>
+      <GenerateButton onClick={() => generate()}>Generate</GenerateButton>
     </Container>
   )
 }
