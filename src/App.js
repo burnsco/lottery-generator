@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
+import Lotto from './Lotto'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  text-align: center;
+`
+const AppHeader = styled.header`
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+`
+
+const Title = styled.h2`
+  padding: 20px;
+  border: 1px solid blue;
+  border-radius: 20px;
+`
 
 function App() {
+  let [numBalls, setNumBalls] = useState(null)
+  let [ballRange, setBallRange] = useState(null)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container>
+      <AppHeader>
+        <Title>Lotto Generator Component</Title>
+        <Lotto />
+      </AppHeader>
+    </Container>
+  )
 }
 
-export default App;
+export default App

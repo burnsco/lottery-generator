@@ -6,6 +6,21 @@
   height: 40vmin;
 }
 
+.ball {
+  height: 35px;
+  width: 35px;
+  background-color: rgb(84, 216, 113);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.lotto-component {
+  border: 1px solid grey;
+  border-radius: 2px;
+  min-width: 400px;
+  min-height: 150px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
