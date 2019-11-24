@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import './App.css'
+import React from 'react'
 import Lotto from './Lotto'
 import styled from 'styled-components'
 
@@ -24,13 +23,11 @@ const Title = styled.h2`
 `
 
 function App() {
-  let [numBalls, setNumBalls] = useState(null)
-  let [ballRange, setBallRange] = useState(null)
   return (
     <Container>
       <AppHeader>
         <Title>Lotto Generator Component</Title>
-        <Lotto />
+        <Lotto title="Mini Daily" numBalls={4} />
       </AppHeader>
     </Container>
   )

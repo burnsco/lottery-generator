@@ -1,10 +1,7 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react'
 import styled from 'styled-components'
 import { Ball } from './Ball'
-
-// <Lottery title="Mini Daily" numBalls={4} maxNum={10}></Lottery>
-// ball amount (4 - 10)
-// ball value range (10-40)
 
 const Container = styled.div`
   border: 1px solid grey;
@@ -12,29 +9,35 @@ const Container = styled.div`
   min-width: 470px;
   min-height: 150px;
 `
-
 const Title = styled.strong`
   color: burlywood;
 `
-
 const BallContainer = styled.div`
   border: 1px solid red;
   display: flex;
   justify-content: center;
   margin: 10px;
 `
-
 const GenerateButton = styled.button`
   background: blueviolet;
   color: white;
 `
 
-const index = () => {
+function generateBalls(max) {
+  let ballsArray = []
+  for (let i = 0; i < max; i++) {
+    ballsArray.push(<Ball value="4" key={i} />)
+  }
+  return ballsArray
+}
+
+function index({ title, numBalls }) {
   return (
     <Container>
-      <Title>Lotto</Title>
+      <Title>{title}</Title>
       <BallContainer>
-        <Ball value="45" />
+        {/* <Ball value="4"></Ball> */}
+        {generateBalls(6)}
       </BallContainer>
       <GenerateButton>Generate</GenerateButton>
     </Container>
