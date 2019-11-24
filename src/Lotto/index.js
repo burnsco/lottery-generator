@@ -13,7 +13,6 @@ const Title = styled.strong`
   color: burlywood;
 `
 const BallContainer = styled.div`
-  border: 1px solid red;
   display: flex;
   justify-content: center;
   margin: 10px;
@@ -23,22 +22,29 @@ const GenerateButton = styled.button`
   color: white;
 `
 
-function generateBalls(max) {
+// 1) Get Number of Balls
+// 2) Get Range# of Balls
+// 3) Generate Balls ==>
+// 3a)
+
+function getRandomNumber(max) {
+  console.log(max)
+  return Math.floor(Math.random() * max + 1)
+}
+
+function generateBalls(maxBalls, maxNum) {
   let ballsArray = []
-  for (let i = 0; i < max; i++) {
-    ballsArray.push(<Ball value="4" key={i} />)
+  for (let i = 0; i < maxBalls; i++) {
+    ballsArray.push(<Ball value={getRandomNumber(maxNum)} key={i} />)
   }
   return ballsArray
 }
 
-function index({ title, numBalls }) {
+function index({ title, numBalls, maxNum }) {
   return (
     <Container>
       <Title>{title}</Title>
-      <BallContainer>
-        {/* <Ball value="4"></Ball> */}
-        {generateBalls(6)}
-      </BallContainer>
+      <BallContainer>{generateBalls(numBalls, maxNum)}</BallContainer>
       <GenerateButton>Generate</GenerateButton>
     </Container>
   )

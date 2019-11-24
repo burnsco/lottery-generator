@@ -27,7 +27,7 @@ function App() {
     <Container>
       <AppHeader>
         <Title>Lotto Generator Component</Title>
-        <Lotto title="Mini Daily" numBalls={4} />
+        <Lotto title="Mini Daily" numBalls={7} maxNum={99} />
       </AppHeader>
     </Container>
   )
